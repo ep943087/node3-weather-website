@@ -1,10 +1,11 @@
-console.log('cheese');
 const path = require('path');
 const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode');
+const port = process.env.PORT || 8080
+
 
 // defin paths for express config
 const publicDir = path.join(__dirname,"../public");
@@ -91,6 +92,6 @@ app.get('*',(req,res)=>{
     })  
 })
 
-app.listen(8080,()=>{
-    console.log('Port 8080 is up and running');
+app.listen(port,()=>{
+    console.log('Server is running up on ' + port);
 })
