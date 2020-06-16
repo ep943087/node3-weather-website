@@ -13,8 +13,8 @@ const forecast = (latitude,longitude,callback) => {
             const temp = data.current.temperature;
             const feelslike = data.current.feelslike;
             const description = data.current.weather_descriptions[0];
-            const precip = data.current.precip;
-            callback(undefined,`${temp} and ${description} in ${location}, feels like ${feelslike}. Chance of rain ${precip}%.`)
+            const humidity = data.current.humidity;
+            callback(undefined,`${temp} and ${description} in ${location}, feels like ${feelslike}. Humidity is ${humidity}.`)
         }
     });
 }
